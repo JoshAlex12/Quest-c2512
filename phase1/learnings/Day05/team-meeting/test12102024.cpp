@@ -16,6 +16,17 @@ int readAges(int ages[]){
     return index;
 }
 
+int findSumOfAge(int ages[], int size){
+        int sum = 0;
+
+        for (int i=0; i<size ;i++){
+            sum = sum + ages[i];
+            
+        }
+        return sum;
+}
+
+
 int findAvg(int ages[], int size){ 
     
     int sumAge = findSumOfAge(ages, size);
@@ -43,20 +54,11 @@ bool isPrime(int age){
     return true;
 }
 
-int findSumOfAge(int ages[], int size){
-        int sum = 0;
 
-        for (int i=0; i<size ;i++){
-            sum = sum + ages[i];
-            
-        }
-        return sum;
-}
-
-int findSumOfPrime(int [ages], int size){
+int findSumOfPrime(int ages[], int size){
     int sum = 0;
 
-    for (i = 0; i < size-1; i++){
+    for (int i = 0; i < size-1; i++){
         if (isPrime(ages[i])){
             sum = sum + ages[i];
         }
@@ -97,6 +99,14 @@ int findMinAge(int ages[], int size){
     return min;  
 }
 
+bool isOddAge(int age){
+        
+    if ((age % 2) == 0){         
+        return false;
+    }
+    return true;
+}
+
 int sumOfOddAge(int ages[], int size){
     int sum = 0;
 
@@ -108,13 +118,7 @@ int sumOfOddAge(int ages[], int size){
     return sum;
 }
 
-bool isOddAge(int age){
-        
-    if ((age % 2) == 0){         
-        return false;
-    }
-    return true;
-}
+
 
 int findSecondMaxAdultAge(int ages[], int size){
     int firstMax = 0, secondMax = 0;
@@ -137,8 +141,6 @@ int findSecondMaxAdultAge(int ages[], int size){
     
     return secondMax;
 }
-
-
 
 
 void functionTest(){
