@@ -1,0 +1,107 @@
+Categories:
+    booking manager
+        BookingManager.h
+        BookingManager.cpp
+    menu
+        menu.h
+        menu.cpp
+    constants 
+        constants.h
+    main
+        main.cpp
+
+
+Contents:
+
+BookingManager.h
+    #pragma once
+    /*
+    All BookingManager function prototypes
+    */
+
+BookingManager.cpp
+    #include <iostream>
+    #include "BookingManager.h"
+    #include "Constants.h"
+    using namespace std;
+
+    /*
+    All function declarations of functions that are defined in BookingManager.h
+    */
+
+Menu.h
+    #pragma once
+    //Function prototype for menu function
+
+Menu.cpp
+    #include <iostream>
+    #include "Menu.h"
+    using namespace std;
+
+    /*
+    Function declarations for functions that are defined in Menu.h
+    */
+
+Constants.h
+    #pragma once
+   
+    //Define the constants
+
+Main.cpp
+    #include <iostream>
+    #include "BookingManager.h"
+    #include "Menu.h"
+    #include "Constants.h"
+    //ie, include all header files in Main.cpp
+    using namespace std;
+
+    //Define the main function
+
+Linux commands used:
+
+">"
+redirection operator
+
+To create lab directory
+    mkdir lab
+
+To view the contents of source file (with line numbers)
+    cat -n programFundmtalRailway.cpp
+
+To select lines 6-12 and paste the selected lines to BookingManager.h (file will be created automatically)
+    head -n 12 programFundmtalRailway.cpp | tail -n 6 > lab/BookingManager.h
+    // first select the first 12 lines and then select the last 6 lines from the selected 12 lines
+
+To select lines 68-240 and paste the selected lines to BookingManager.cpp
+    sed -n 68,240p programFundmtalRailway.cpp > lab/BookingManager.cpp
+
+To select line no. 13 and paste it to Menu.h
+    sed -n 13p programFundmtalRailway.cpp > lab/Menu.h
+
+To select lines 242-252 and paste the selected lines to Menu.cpp
+    sed -n 242,252p programFundmtalRailway.cpp > lab/Menu.cpp
+
+To select lines 4-5 and paste the selected lines to Constants.h
+    sed -n 4,5p programFundmtalRailway.cpp > lab/Constants.h
+
+To select lines 15-65 and paste the selected lines to Main.cpp
+    head -n 65 programFundmtalRailway.cpp | tail -n 51 > lab/Main.cpp
+
+List all files in lab directory and change directory to lab
+    ls -l lab
+    cd lab
+
+Open each file using vim and add 
+    #pragma once  ->  to all header files (.h)
+    #include "*"  ->  to all source files (.cpp)
+
+Create object files for all source files:
+    g++ -c *.cpp
+
+Compile all object files to an executable file (to a.out)
+    g++ *.o
+
+Execute executable file
+    ./a.out
+
+

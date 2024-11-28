@@ -1,0 +1,9 @@
+train table: details of the train
+
+
+booking table: details of passenger booking
+ticket_id
+pass
+
+
+food table: deta

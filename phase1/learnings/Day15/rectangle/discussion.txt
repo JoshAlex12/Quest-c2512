@@ -1,0 +1,58 @@
+Categories
+    Main.cpp
+    Rectangle.h
+    Rectangle.cpp
+
+Main.cpp
+    #include <iostream>
+    #include "Rectangle.h"
+    using namespace std;
+
+    /*
+    Main function
+    */
+
+Rectangle.h    
+    #pragma once
+
+    /*
+    Class defination
+    */
+
+Rectangle.cpp
+    #include <iostream>
+    #include "Rectangle.h"
+    using namespace std;
+        
+    /*
+    member function declaration of class
+    */
+
+Linux commands:
+
+
+Create lab directory
+    mkdir lab
+
+Select lines 19 to 35 and paste it to Main.cpp
+    sed -n 19,35p rect.cpp  > lab/Main.cpp
+
+Select lines 5 to 17 and paste it to Rectangle.h
+    sed -n 5,17p rect.cpp > lab/Rectangle.h
+
+Select lines 37 to 51 and paste it to Rectangle.cpp
+    sed -n 37,51p rect.cpp > lab/Rectangle.cpp
+   
+Change working directory to lab  
+    cd lab
+
+Open all files using vim and edit required changes
+
+Compile the .cpp files to object codes
+    g++ -c *.cpp
+
+Compile the object files to executable file named App.out
+    g++ -o App.out *.o
+
+Execute the executable file named App.out
+    ./App.out

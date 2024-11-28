@@ -1,0 +1,49 @@
+Outcomes:
+
+Keys:
+    Primary Key
+            -> Must be unique
+            -> Used to identify the entire row
+            -> Cannot contain NULL values.
+            -> Each table can have only one primary key
+            -> A primary key is basically a type of candidate key
+
+    Super Key
+            -> A set of one or more columns that, taken together, can uniquely identify each row in a table
+            -> Can use as many combinations which identifes the table uniquely
+
+    Candidate Key
+            -> Minimal super key
+            -> Minimum number of colums that uniquely represent the table
+            -> (Ask Mahesh) can candidate key have null values
+
+    Foreign Key
+            -> Can be used to identify a column in another table
+            -> It uniquely identifies
+            -> It is the primary key in another table
+
+    Composite Key
+            -> It is a super key containing two or more columns
+
+    Alternate Key
+            -> Any candidate key that is not chosen as the primary key
+    
+    Unique Key
+            -> A column or set of columns that must contain unique values across all rows in the table
+            -> The values in the column is to be unique
+    
+    Secondary Key:
+            -> A secondary key is a key or set of columns used to retrieve data from a table.
+            -> But it does not need to uniquely identify rows.
+            -> It’s often used for indexing purposes to speed up searches and improve query performance on specific columns.
+    
+    Surrogate Key:
+            -> later
+
+Normal forms:
+    -> Initially every DB is Unnormalized Form (UNF) 
+
+    1NF:
+    
+    2NF
+    3NF
