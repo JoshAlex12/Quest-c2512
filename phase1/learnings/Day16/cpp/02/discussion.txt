@@ -1,0 +1,38 @@
+#001 
+Implement a `Patient` Class with Comparison Methods in C++
+
+`Task:` 
+    Create a class `Patient` that represents a patient 
+    with properties `PatientID` (string) and `Age` (int). 
+    Implement the following methods 
+    to compare the ages of two patients:
+
+    1. `Equals(const Patient& other)` - 
+        Checks if two patients are of the same age.
+    2. `NotEquals(const Patient& other)` - 
+        Checks if two patients are of different ages.
+    3. `GreaterThan(const Patient& other)` - 
+        Checks if one patient is older than another.
+    4. `GreaterThanEquals(const Patient& other)` - 
+        Checks if one patient is older or the same age as another.
+    5. `LessThan(const Patient& other)` - 
+        Checks if one patient is younger than another.
+    6. `LessThanEquals(const Patient& other)` - 
+        Checks if one patient is younger or the same age as another.
+
+---
+
+`Example Input and Output:`
+```cpp
+int main() {
+    Patient p1("P001", 45);
+    Patient p2("P002", 50);
+
+    std::cout << std::boolalpha;
+    std::cout << "Equals: " << p1.Equals(p2) << std::endl;          // Output: false
+    std::cout << "GreaterThan: " << p1.GreaterThan(p2) << std::endl; // Output: false
+    std::cout << "LessThanEquals: " << p1.LessThanEquals(p2) << std::endl; // Output: true
+
+    return 0;
+}
+```

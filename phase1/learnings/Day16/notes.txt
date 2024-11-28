@@ -1,0 +1,12 @@
+Next tasks: 
+    1. Individual comparison functions as object functions ->  done
+    2. Individual comparison functions as non-member functions [friends to class, outside the object functions]
+                        -> make (1) as friends
+    3. Individual comparison functions as non-member functions [friends to class, outside the object functions]
+            + 
+            comparison functions of hospital stay together in the main function to test 
+                        -> include hospital stay
+    4. comparison functions in another class which is friend to object class 
+                        -> include friend class for non member functions
+    5. Solving min, max, 2nd min, 2nd max on array of objects 
+                        -> array of objects

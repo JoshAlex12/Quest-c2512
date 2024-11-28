@@ -1,0 +1,34 @@
+#001 Josh
+Bhagya
+Dhaheen:
+    -> While presenting: explicitly differentiate between function declaration and function defination
+Nayana
+Pitchumani
+
+#002 Nayana
+Bhagya
+Dhaheen
+Josh
+Pitchumani
+
+#003 Dhaheen
+Bhagya
+Josh:
+    -> Coding standards: Implement parenthesis in return statement
+Nayana
+Pitchumani
+
+#004 Bhagya
+Dhaheen
+Josh:
+    -> Coding standards: Implement indententation in class declaration
+Nayana
+Pitchumani
+
+#005 Pitchumani
+Bhagya
+Dhaheen:
+    -> While presenting: User defined data type and not user defined function
+Josh
+Nayana
+

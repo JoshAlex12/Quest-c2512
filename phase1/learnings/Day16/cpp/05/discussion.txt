@@ -1,0 +1,72 @@
+#003  
+`Implement a `Vaccination` Class with Array Processing in C++`
+
+`Task:`  
+    Create a class `Vaccination` 
+    that represents a vaccination record 
+    with properties `VaccinationID` (string) and `DosesAdministered` (int). 
+    Implement functions to find the following 
+    from an array of `Vaccination` objects:
+
+1. `Minimum Doses Administered` - 
+    Find the vaccination record with the minimum number of doses administered.
+2. `Maximum Doses Administered` - 
+    Find the vaccination record with the maximum number of doses administered.
+3. `Second Minimum Doses Administered` - 
+    Find the vaccination record with the second lowest number of doses administered.
+4. `Second Maximum Doses Administered` - 
+    Find the vaccination record with the second highest number of doses administered.
+
+`Functions to Implement:`  
+- `findMinDoses()`
+- `findMaxDoses()`
+- `findSecondMinDoses()`
+- `findSecondMaxDoses()`
+
+`Example Input and Output:`  
+```cpp
+int main() {
+    Vaccination vaccinations[] = {
+        Vaccination("V001", 2),
+        Vaccination("V002", 3),
+        Vaccination("V003", 1),
+        Vaccination("V004", 5),
+        Vaccination("V005", 4)
+    };
+    
+    std::cout << std::boolalpha;
+    
+    std::cout << "Min Doses: " << vaccinations[findMinDoses(vaccinations, 5)].DosesAdministered << std::endl;  // Output: 1
+    std::cout << "Max Doses: " << vaccinations[findMaxDoses(vaccinations, 5)].DosesAdministered << std::endl;  // Output: 5
+    std::cout << "2nd Min Doses: " << vaccinations[findSecondMinDoses(vaccinations, 5)].DosesAdministered << std::endl;  // Output: 2
+    std::cout << "2nd Max Doses: " << vaccinations[findSecondMaxDoses(vaccinations, 5)].DosesAdministered << std::endl;  // Output: 4
+
+    return 0;
+}
+```
+Requirements:
+
+An array of objects
+And perform operations:
+    Maximum
+    Minimum
+    Second Maximum
+    Second Minimum
+
+
+Class Vaccination{
+    private:
+        string VaccinationID;
+        int DosesAdministered;
+    public:
+        string findMinDoses(Vaccination& array, size);
+        string findMaxDoses();
+        string findSecondMinDoses();
+        string findSecondMaxDoses();
+}
+
+vaccinations[
+                findMinDoses(
+                                vaccinations, 5
+                            ) 
+            ].DosesAdministered
