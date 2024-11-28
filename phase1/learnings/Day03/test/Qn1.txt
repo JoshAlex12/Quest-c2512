@@ -1,0 +1,109 @@
+Q: 
+1. Write a program to read 10 numbers from the user, find their sum. [with array]
+2. Write a program to read 10 numbers from the user, find their sum [without using array]
+
+[pseudo code and c++ code]
+
+A:
+Program to read 10 numbers from the user and find their sum using arrays.
+
+pseudo functions:
+
+function sumArray(void) -> int
+    array numbers[10] -> int
+    sum -> int = 0
+
+    for i in (0..9)
+        input numbers[i]
+        sum = sum + numbers[i]
+    end for
+
+    return sum
+
+function sumArrayTest(void) -> void
+    result -> int
+    result = sumArray()
+    print "The sum of the numbers is: ", result
+
+pseudo code:
+
+sumArrayTest()
+
+c++ code:
+#include <iostream>
+using namespace std;
+
+int sumArray() {
+    int numbers[10];
+    int sum = 0;
+
+    cout << "Enter 10 numbers: ";
+    for (int i = 0; i < 10; i++) {
+        cin >> numbers[i];
+        sum += numbers[i];
+    }
+    return sum;
+}
+
+void sumArrayTest() {
+    int result = sumArray();
+    cout << "The sum of the numbers is: " << result << endl;
+}
+
+int main() {
+    sumArrayTest();
+    return 0;
+}
+
+
+Program to read 10 numbers from the user and find their sum without using arrays.
+
+pseudo functions:
+
+function calculateSum(void) -> int
+    sum -> int = 0
+    number -> int
+
+    for i in (0..9)
+        input number
+        sum = sum + number
+    end for
+
+    return sum
+
+
+function calculateSumTest(void) -> void
+    result -> int
+    result = calculateSum()
+    print "The sum of the numbers is: ", result
+
+
+pseudo code:
+
+calculateSumTest()
+
+c++ code:
+#include <iostream>
+using namespace std;
+
+int calculateSum() {
+    int sum = 0;
+    int number;
+
+    cout << "Enter 10 numbers: ";
+    for (int i = 0; i < 10; i++) {
+        cin >> number;
+        sum += number;
+    }
+    return sum;
+}
+
+void calculateSumTest() {
+    int result = calculateSum();
+    cout << "The sum of the numbers is: " << result << endl;
+}
+
+int main() {
+    calculateSumTest();
+    return 0;
+}

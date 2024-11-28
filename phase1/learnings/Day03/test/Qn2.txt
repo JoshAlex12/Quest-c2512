@@ -1,0 +1,72 @@
+Q:
+Write a program that continuously prompts the user to enter a number. The program should add the entered number to the previous valid number if it is divisible by 3 or 5 and display the sum. If the number is not divisible by 3 or 5, display a message indicating this. The program should terminate when the user types any particular character. Additionally, handle invalid input by prompting the user to enter a valid number.
+
+[both pseudo code and C++ code]
+A:
+
+pseudo functions:
+
+function inputNumber(void) -> int
+
+function calculateSumDivisibleByThreeOrFive(void) -> void
+    sum -> int = 0
+    number -> int
+
+    while true
+        print "Enter number (or other character to quit): "
+
+        if (input != number)
+            print "Invalid input! Exiting the program."
+            break
+        end if
+
+        if (((number % 3) == 0) OR ((number % 5) == 0))
+            sum = (sum + number)
+            print "Sum: ", sum
+        else
+            print number, " is not divisible by 3 or 5."
+        end if
+    end while
+
+
+function calculateSumDivisibleByThreeOrFiveTest(void) -> void
+    calculateSumDivisibleByThreeOrFive()
+
+
+pseudo code:
+calculateSumDivisibleByThreeOrFiveTest()
+
+
+
+#include <iostream>
+using namespace std;
+
+void calculateSumDivisibleByThreeOrFive() {
+    int sum = 0;
+    int number;
+    
+    while (true) {
+        cout << "Enter number (or other character to quit): ";
+
+        if (!(cin >> number)) {
+            cout << "Invalid input! Exiting the program" << endl;
+            break;
+        }
+
+        if (((number % 3) == 0) || ((number % 5) == 0)) {
+            sum += number;
+            cout << "Sum: " << sum << endl;
+        } else {
+            cout << number << " is not divisible by 3 or 5." << endl;
+        }
+    }
+}
+
+void calculateSumDivisibleByThreeOrFiveTest() {
+    calculateSumDivisibleByThreeOrFive();
+}
+
+int main() {
+    calculateSumDivisibleByThreeOrFiveTest();
+    return 0;
+}

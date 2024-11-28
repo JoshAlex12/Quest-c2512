@@ -1,0 +1,73 @@
+Q:
+Program for reversing a string without using any built in functions.
+
+[pseudo code and c++ code]
+
+A:
+
+pseudo functions:
+
+function reverseString(inputString -> string) -> string
+    
+    reversedString -> string
+    length -> int = 0
+    
+    for each character in inputString
+        length = length + 1
+    end for
+
+    for i from (length - 1) to 0
+        reversedString = reversedString + inputString[i]
+    end for
+
+    return reversedString
+
+
+function reverseStringTest(void) -> void
+    inputString -> string
+
+    print "Enter a string: "
+    input inputString
+
+    string reversedString = reverseString(inputString)
+
+    print "Reversed string: " reversedString
+
+pseudo code:
+
+reverseStringTest()
+
+c++ code:
+#include <iostream>
+using namespace std;
+
+string reverseString(string inputString) {
+    string reversedString = "";
+    int length = 0;
+
+    while (inputString[length] != '\0') {
+        length++;
+    }
+    
+    for (int i = length - 1; i >= 0; i--) {
+        reversedString += inputString[i];
+    }
+
+    return reversedString;
+}
+
+void reverseStringTest(){
+    string inputString;
+
+    cout << "Enter a string: ";
+    cin >> inputString;
+    
+    string reversedString = reverseString(inputString);
+
+    cout << "Reversed string: " << reversedString << endl;
+}
+
+int main() {
+    reverseStringTest();
+    return 0;
+}
