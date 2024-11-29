@@ -1,0 +1,33 @@
+Two objects:
+
+    (1) HospitalStayManager "manager";
+        friend:
+            class HospitalStayAggregator;
+            int main();
+
+        private:
+            HospitalStay stays[MAX_HOSPITAL_STAYS];
+            int numHospitalStays;
+
+        public:
+            int findIndexById(string StayID);
+            
+            // behaviours
+            void create();
+            void displayAll();
+            void editById();
+            void deleteById();
+
+
+    (2) HospitalStayAggregator "aggregator";
+        public:
+            int findMin(HospitalStayManager &manager);
+        int findMax(HospitalStayManager &manager);
+        int findSecondMin(HospitalStayManager &manager);
+        int findSecondMax(HospitalStayManager &manager);
+
+switch:
+
+    (1) create:
+        manager.create():
+            
