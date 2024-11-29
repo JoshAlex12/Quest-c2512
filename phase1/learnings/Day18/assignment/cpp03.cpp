@@ -212,7 +212,7 @@ PatientManager::PatientManager()
 // *****Menu.cpp*****
 void printMenu()
 {
-    cout << "\n=== Movie Ticket Patient Management System ===\n";
+    cout << "\n=== Patient Management System ===\n";
     cout << "1. Create Patient\n";
     cout << "2. Display All Patients\n";
     cout << "3. Edit Patient\n";
