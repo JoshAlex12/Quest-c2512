@@ -50,3 +50,71 @@
 
 13. `Remove the project directory`:
     - Check if the directory is empty and remove it.
+
+
+$ ls
+task1.txt  task2.txt  task3.txt
+$ mkdir vi_cpp_project
+$ cd vi_cpp_project/
+$ vi welcome.cpp
+$ cat welcome.cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Welcome to Linux programming!" << std::endl;
+    return 0;
+}
+
+$ g++ welcome.cpp
+$ ./a.out
+Welcome to Linux programming!
+$ vi welcome.cpp
+$ cat welcome.cpp 
+#include <iostream>
+#include <iostream>
+
+int main() {
+    std::string name;
+
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
+
+    std::cout << "Hello, " << name << "! Welcome to the C++ program." << std::endl;
+
+    return 0;
+}
+
+$ g++ welcome.cpp
+$ ./a.out
+Enter your name: Josh
+Hello, Josh! Welcome to the C++ program.
+$ vi welcome.cpp
+$ cat welcome.cpp 
+#include <iostream>
+
+int main() {
+    std::string name;
+
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
+
+    std::cout << "Hello, " << name << "! Welcome to the C++ program." << std::endl;
+    std::cout << "Goodbye!" << std::endl;
+    return 0;
+}
+
+$ g++ welcome.cpp 
+$ ./a.out
+Enter your name: Josh
+Hello, Josh! Welcome to the C++ program.
+Goodbye!
+$ rm welcome.cpp 
+$ ls
+a.out
+$ rm ./a.out
+$ ls
+$ cd ..
+$ rmdir vi_cpp_project/
+$ ls
+task1.txt  task2.txt  task3.txt
+$

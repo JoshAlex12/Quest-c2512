@@ -24,3 +24,59 @@
 
 11. Check the contents of the `my_cpp_project` directory, and 
     remove the directory if it’s empty.
+
+
+
+$ ls
+task1.txt  task2.txt  task3.txt
+$ mkdir my_cpp_project
+$ cd my_cpp_project/
+$ touch greet.cpp
+$ ls
+greet.cpp
+$ nano greet.cpp
+$ cat greet.cpp 
+#include <iostream>
+
+int main() {
+    std::string name;
+
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
+
+    std::cout << "Hello, " << name << std::endl;
+
+    return 0;
+}
+$ g++ greet.cpp
+$ ./a.out
+Enter your name: Josh
+Hello, Josh
+$ nano greet.cpp
+$ nano greet.cpp
+$ cat greet.cpp 
+#include <iostream>
+
+int main() {
+    std::string name;
+
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
+
+    std::cout << "Hello, " << name << std::endl;
+    std::cout << "Goodbye!" << std::endl;
+
+    return 0;
+}
+$ g++ greet.cpp 
+$ ./a.out
+Enter your name: Josh
+Hello, Josh
+Goodbye!
+$ rm *
+$ ls
+$ cd ..
+$ rmdir my_cpp_project/
+$ ls
+task1.txt  task2.txt  task3.txt
+$ 
