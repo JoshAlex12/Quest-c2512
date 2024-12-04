@@ -14,13 +14,21 @@ class Patient
 private:
     string PatientID;
     int Age;
-    // string PatientID;
-    // int Age;
+
+public:
+    bool GreaterThan(const Patient &other);
+    bool LessThan(const Patient &other);
+    // getters-setters
+    string GetPatientID();
+    int GetAge();
 };
 
 // *****PatientManager.h*****
 class PatientManager
 {
+    friend class PatientAggregator;
+    friend int main();
+
 private:
     // attributes
     Patient patients[MAX_PATIENTS];
@@ -37,6 +45,15 @@ public:
     //
     PatientManager();
 };
+//*****PatientAggregator.h*****
+class PatientAggregator
+{
+public:
+    int findMin(PatientManager &manager);
+    int findMax(PatientManager &manager);
+    int findSecondMin(PatientManager &manager);
+    int findSecondMax(PatientManager &manager);
+};
 // *****Menu.h*****
 void printMenu();
 
@@ -45,6 +62,7 @@ void printMenu();
 int main()
 {
     PatientManager manager;
+    PatientAggregator aggregator;
 
     int choice; // User's menu choice
 
@@ -70,12 +88,40 @@ int main()
             manager.deleteById();
             break;
         case 5:
+            std::cout << "Patient with Min Age: "
+                      << manager.patients[aggregator.findMin(manager)].GetPatientID()
+                      << " with Age "
+                      << manager.patients[aggregator.findMin(manager)].GetAge()
+                      << std::endl;
+            break;
+        case 6:
+            std::cout << "Patient with Max Age: "
+                      << manager.patients[aggregator.findMax(manager)].GetPatientID()
+                      << " with Age "
+                      << manager.patients[aggregator.findMax(manager)].GetAge()
+                      << std::endl;
+            break;
+        case 7:
+            std::cout << "Patient with 2nd Min Age: "
+                      << manager.patients[aggregator.findSecondMin(manager)].GetPatientID()
+                      << " with Age "
+                      << manager.patients[aggregator.findSecondMin(manager)].GetAge()
+                      << std::endl;
+            break;
+        case 8:
+            std::cout << "Patient with 2nd Max Age: "
+                      << manager.patients[aggregator.findSecondMax(manager)].GetPatientID()
+                      << " with Age "
+                      << manager.patients[aggregator.findSecondMax(manager)].GetAge()
+                      << std::endl;
+            break;
+        case 9:
             cout << "Exiting the system. Goodbye!\n";
             break;
         default:
             cout << "Invalid choice. Please enter a number between 1 and 5.\n";
         }
-    } while (choice != 5);
+    } while (choice != 9);
 
     return 0;
 }
@@ -217,5 +263,108 @@ void printMenu()
     cout << "2. Display All Patients\n";
     cout << "3. Edit Patient\n";
     cout << "4. Delete Patient\n";
-    cout << "5. Exit\n";
+    cout << "5. Find Min Age\n";
+    cout << "6. Find Max Age\n";
+    cout << "7. Find Second Min Age\n";
+    cout << "8. Find Second Max Age\n";
+    cout << "9. Exit\n";
+}
+
+//*****Patient.cpp*****
+bool Patient::GreaterThan(const Patient &other)
+{
+    return (Age > other.Age);
+}
+
+bool Patient::LessThan(const Patient &other)
+{
+    return (Age < other.Age);
+}
+
+// getters-setters
+string Patient::GetPatientID()
+{
+    return PatientID;
+}
+int Patient::GetAge()
+{
+    return Age;
+}
+//*****PatientAggregator.cpp*****
+// Function to find the index of the Patient with the minimum years of Stay
+int PatientAggregator::findMin(PatientManager &manager)
+{
+    Patient *arr = manager.patients;
+    int n = manager.numPatients;
+    //
+    int minIndex = 0;
+    for (int i = 1; i < n; ++i)
+    {
+        if (arr[i].LessThan(arr[minIndex]))
+        {
+            minIndex = i;
+        }
+    }
+    return minIndex;
+}
+
+// Function to find the index of the Patient with the maximum years of Stay
+int PatientAggregator::findMax(PatientManager &manager)
+{
+    Patient *arr = manager.patients;
+    int &n = manager.numPatients;
+    //
+    int maxIndex = 0;
+    for (int i = 1; i < n; ++i)
+    {
+        if (arr[i].GreaterThan(arr[maxIndex]))
+        {
+            maxIndex = i;
+        }
+    }
+    return maxIndex;
+}
+
+// Function to find the index of the Patient with the second minimum years of Stay
+int PatientAggregator::findSecondMin(PatientManager &manager)
+{
+    Patient *arr = manager.patients;
+    int &n = manager.numPatients;
+    //
+    int minIndex = findMin(manager);
+    int secondMinIndex = (minIndex == 0) ? 1 : 0;
+
+    for (int i = 0; i < n; ++i)
+    {
+        if (i != minIndex)
+        {
+            if (arr[i].LessThan(arr[secondMinIndex]))
+            {
+                secondMinIndex = i;
+            }
+        }
+    }
+    return secondMinIndex;
+}
+
+// Function to find the index of the Patient with the second maximum years of Stay
+int PatientAggregator::findSecondMax(PatientManager &manager)
+{
+    Patient *arr = manager.patients;
+    int &n = manager.numPatients;
+    //
+    int maxIndex = findMax(manager);
+    int secondMaxIndex = (maxIndex == 0) ? 1 : 0;
+
+    for (int i = 0; i < n; ++i)
+    {
+        if (i != maxIndex)
+        {
+            if (arr[i].GreaterThan(arr[secondMaxIndex]))
+            {
+                secondMaxIndex = i;
+            }
+        }
+    }
+    return secondMaxIndex;
 }

@@ -1,0 +1,98 @@
+1. Create a new directory called `my_cpp_project` for your C++ programs.
+
+2. Change into the `my_cpp_project` directory.
+
+3. Create a C++ file named `greet.cpp` 
+    in the `my_cpp_project` directory.
+
+4. Write a C++ program inside `greet.cpp` 
+    that asks the user for their name and prints a greeting message.
+
+5. Compile the `greet.cpp` program into an executable.
+
+6. Run the compiled executable and ensure 
+    that it prompts for the user’s name and displays the greeting.
+
+7. Use a Linux command to display the contents of `greet.cpp`.
+
+8. Modify the `greet.cpp` file 
+    to add a simple farewell message and save the changes.
+
+9. Compile and run the modified program 
+    to ensure it works as expected.
+
+10. Remove the `greet.cpp` file once you're done.
+
+11. Check the contents of the `my_cpp_project` directory, and 
+    remove the directory if it’s empty.
+
+
+
+
+
+$ ls
+task1.txt  task2.txt  task3.txt
+
+$ mkdir my_cpp_project
+
+$ cd my_cpp_project/
+
+$ touch greet.cpp
+
+$ ls
+
+greet.cpp
+
+$ nano greet.cpp
+
+$ cat greet.cpp 
+#include <iostream>
+
+int main() {
+    std::string name;
+
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
+
+    std::cout << "Hello, " << name << std::endl;
+
+    return 0;
+}
+
+$ g++ greet.cpp
+
+$ ./a.out
+Enter your name: Josh
+Hello, Josh
+
+$ nano greet.cpp
+
+$ nano greet.cpp
+
+$ cat greet.cpp 
+#include <iostream>
+
+int main() {
+    std::string name;
+
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
+
+    std::cout << "Hello, " << name << std::endl;
+    std::cout << "Goodbye!" << std::endl;
+
+    return 0;
+}
+
+$ g++ greet.cpp 
+$ ./a.out
+Enter your name: Josh
+Hello, Josh
+Goodbye!
+$ rm *
+$ ls
+$ cd ..
+$ rmdir my_cpp_project/
+$ ls
+task1.txt  task2.txt  task3.txt
+$ 

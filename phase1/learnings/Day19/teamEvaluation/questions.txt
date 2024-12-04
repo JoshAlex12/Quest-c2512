@@ -1,0 +1,29 @@
+Josh:
+    1. What is encapsulation and where have you used encapsulation in your program? (Bhagya)
+    2. What is the listing command in linux to display the file permissions and last updated date and time? (Dhaheen)
+    3. Types of constructor (Nayana)
+    4. Explain Member functions (static and non static data members and function) (Pitchumani)
+
+Pitchumani:
+    1. How to set line number in vim editor? (Bhagya)
+    2. What is the objective of using pragma once (Josh)
+    3. What is the use of destructor (Nayana)
+    4. How to save and quit in vim editor in a single command (Dhaheen)
+
+Bhagya:
+    1. What is the numeric notation for assigning file permissions in linux? (Josh)
+    2. What is grep command? (Nayana)
+    3. What is the concept of friend function (Dhaheen)
+    4. Explain function overloading (Pitchumani)
+
+Nayana:
+    1. Where is Ctrl + w, w used and why is it used? (Josh)
+    2. Difference between Top and free command in linux (Bhagya)
+    3. Explain Encapsulation in oops (Pitchumani)
+    4. Explain member initialization in cpp (Dhaheen)
+
+Dhaheen
+    1. What are all commands in vim to create tabs for managing files? (Josh)
+    2. How to open multiple files and navigate bewteen each in vim editor? (Bhagya)
+    3. Explain the abstraction concept in oops (Pitchumani)
+    4. Explain the difference between static and non-static member data (Nayana)

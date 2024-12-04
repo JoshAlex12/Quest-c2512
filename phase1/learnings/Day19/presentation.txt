@@ -1,0 +1,11 @@
+Portfolio:
+https://github.com/JoshAlex12/Quest-c2512/tree/main/phase1/learnings/Day16/portfolio-website
+
+Linux:
+https://github.com/JoshAlex12/Quest-c2512/tree/main/phase1/learnings/Day14
+
+5 tasks (not necessary):
+https://github.com/JoshAlex12/Quest-c2512/tree/main/phase1/learnings/Day17
+
+Aggregators and crud:
+https://github.com/JoshAlex12/Quest-c2512/tree/main/phase1/learnings/Day18/assignment
