@@ -1,0 +1,67 @@
+1. According to Google's C++ Style Guide, what are all the rules to be followed while defining constants and enum?
+    
+    `Constants`
+    - Use `kPascalCase` for constants, prefixed with `k`.
+    - Constants should be declared as `constexpr` or `const`.
+
+    `Examples`:
+    ```cpp
+    constexpr double kPi = 3.14159;
+    const int kMaxBufferSize = 1024;
+
+    `Enum Names`
+    - Use `PascalCase` for the enum name and `kPascalCase` for the enumerators.
+
+    `Examples`:
+    ```cpp
+    enum class Color {
+        kRed,
+        kGreen,
+        kBlue
+    };
+
+    enum Status {
+        kOk,
+        kError,
+        kUnknown
+    };
+    ```
+
+2. Explain the Syntax for Creating a Stored Procedure
+
+    ```sql
+    CREATE OR REPLACE PROCEDURE procedure_name 
+        (parameter1 IN datatype, parameter2 OUT datatype, ...)
+    AS
+    -- Declaration section (optional)
+    BEGIN
+    -- Execution section (mandatory)
+    -- Your PL/SQL code goes here
+    EXCEPTION
+    -- Exception handling section (optional)
+    END procedure_name;
+    ```
+
+3.  Who will access the private members of the object? 
+    1. member functions of the object 
+        MAHESH RECOMMENDATION: to use getter / setter
+    2. friend function (outside the object) of the object 
+    3. friend class (another class) of the object
+    4. public getter / setter for object private fields/attr 
+        MAHESH RECOMMENDATION: to use getter / setter
+
+4. What is shebang in shell scripting?
+
+    #!/path/to/interpreter
+
+    The shebang (#!) is a special character sequence used at the beginning 
+    of a script to specify the interpreter that should be used to execute the script. 
+    It tells the system how to run the script and what program or shell should process the file.
+
+5. What are the types of inheritance:
+
+    1. single level inheritance: Animal -> Lion 
+    2. multi level inheritance: Animal -> Lion -> Cub -> CubLion
+    3. multiple inheritance: {Lion, Lioness} -> Cub 
+    4. hierachical inheritance: Animal -> Lion, Animal -> Lioness 
+    5. hybrid : Animal -> Lion, Animal -> Lioness, {Lion, Lioness} -> Cub

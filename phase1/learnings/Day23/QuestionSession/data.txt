@@ -1,0 +1,71 @@
+Answerer:   Questioner
+
+Bhagya->    Pitchumani
+            Observer: Nayana
+
+Dhaheen->   Nayana
+            Observer: Josh
+
+Pitchumani->Josh
+            Observer: Dhaheen
+
+Josh->      Dhaheen
+            Observer: Bhagya
+
+Nayana->    Bhagya
+            Observer: Pitchumani
+
+
+Report on QA session conducted on 06/12/2024 during Teams meeting:
+
+Pitchumani(Questioner) to Bhagya(Answerer) | Nayana(Observer):
+    1. Explain assembly language,high level language,machine language.
+    2. Normalization with example
+    3. Explain sdlc
+    4. Explains types of joins 
+    5. Three tier architecture
+
+    Mark to Bhagya(Answerer): 4.5/5
+    Marks to Bhagya(Answerer) by Nayana(Observer): 4.5/5
+
+Nayana(Questioner) to Dhaheen(Answerer) | Josh(Observer):
+    1. Explain the types of access specifier.         
+    2. Difference blw Bourne and bash shell. 
+    3. Comparison operator in shell scripting
+    4. Vim command to go to the start of the previous paragraph. 
+    5. What is Shebang In shell scripting.
+
+    Mark to Dhaheen(Answerer): 4.5/5
+    Marks to Dhaheen(Answerer) by Josh(Observer): 4.5/5
+    
+
+Josh(Questioner) to Pitchumani(Answerer) | Dhaheen(Observer):
+    1. According to Google's C++ Style Guide, what are all the rules to be followed while defining constants and enum?
+    2. Explain the Syntax for Creating a Stored Procedure
+    3.  Who will access the private members of the object? 
+    4. What is shebang in shell scripting?
+    5. What are the types of inheritance?
+
+    Mark to Pitchumani(Answerer): 4.7/5
+    Marks to Pitchumani(Answerer) by Dhaheen(Observer): 4.5/5
+
+Dhaheen(Questioner) to Josh(Answerer) | Bhagya(Observer):
+    1. What is switch case & usage.
+    2. second largest salary from an employee table.
+    3. Steps to write, compile and run a greeting program in vim.
+    4. 3 ways to access private member data of a class.
+    5. Use of suid bit in Linux file permission.
+
+    Mark to Josh(Answerer): 5/5
+    Marks to Josh(Answerer) by Bhagya(Observer): 5/5
+
+
+Bhagya(Questioner) to Nayana(Answerer) | Pitchumani(Observer):
+    1. Shell scripting to find square of a number.
+    2. Explain linux architecture 
+    3. what is dangling pointer and how can we avoid it
+    4. Explain the types of inheritance 
+    5. Major Diff between struct class and union.
+
+    Marks to Nayana(Answerer): 4.5/5
+    Marks to Nayana(Answerer) by Pitchumani(Observer): 4.5/5
