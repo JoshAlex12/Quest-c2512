@@ -1,0 +1,107 @@
+1. What are Macro Arguments and Variadic Macros in C++ pre-processors?
+    - C++ preprocessor macros can take arguments, 
+    allowing for more flexible macro definitions.
+
+    `Example:`
+    ```cpp
+    #define MAX(a, b) ((a) > (b) ? (a) : (b))
+    int larger = MAX(3, 5);  // Expands to: ((3) > (5) ? (3) : (5))
+    ```
+
+    - `Variadic macros` allow a variable number of arguments:
+    ```cpp
+    #define PRINT(...) printf(__VA_ARGS__) // __VA_ARGS__ is used for variable arguments
+    PRINT("Hello, %d\n", 42);  // Expands to: printf("Hello, %d\n", 42);
+
+2. How to create the Static Library using ar command?
+
+    The `ar` command to bundle the object file into a static library (`.a` file):
+    ```bash
+    ar rcs libmathutils.a math_utils.o
+    ```
+
+    Here:
+    - ``ar``: Archiver utility to create static libraries.
+    - ``rcs``: 
+    - `r`: Replace or insert files into the archive.
+    - `c`: Create the archive if it doesn’t exist.
+    - `s`: Add an index for faster lookups.
+
+    The resulting `libmathutils.a` is your static library.
+
+3. Summarize Exception Handling Concepts in C++
+
+    - ``try-catch``: Used to handle exceptions. 
+    Code that may throw an exception is enclosed in the `try` block, and 
+    any exceptions are caught and handled in the `catch` block.
+    - `Multiple `catch` blocks`: You can have more than one `catch` block 
+    to handle different types of exceptions separately.
+    - `Generic `catch` block`: A `catch` block 
+    that catches all types of exceptions using the `...` syntax.
+    - `Custom Exceptions`: You can define custom exceptions 
+    by inheriting from the `std::exception` class (or any derived class)
+    to handle specific errors in your application.
+    - `Throwing exceptions`: The `throw` keyword is used 
+    to explicitly throw an exception when an error condition is met.
+
+4. What are the Phases of the Waterfall Model?
+
+    1. `Requirement Analysis`
+    - `Objective`: Collect and document all the software requirements.
+    - `Activities`:
+        - Stakeholder discussions to identify needs.
+        - Create a detailed `Software Requirement Specification (SRS)` document.
+    - `Output`: Clear, documented requirements.
+
+    ---
+
+    2. `System Design`
+    - `Objective`: Develop the architecture and design of the system.
+    - `Activities`:
+        - High-Level Design (HLD): Overall system structure, database design, and data flow.
+        - Low-Level Design (LLD): Detailed design of each module or component.
+    - `Output`: Design documents, diagrams, and specifications.
+
+    ---
+
+    3. `Implementation (Coding)`
+    - `Objective`: Translate the design into actual code.
+    - `Activities`:
+        - Developers write and integrate code for all modules.
+        - Use programming tools and follow coding standards.
+    - `Output`: Source code and executable builds.
+
+    ---
+
+    4. `Testing`
+    - `Objective`: Identify and fix defects in the system.
+    - `Activities`:
+        - Unit Testing: Verify individual components.
+        - Integration Testing: Test interactions between modules.
+        - System Testing: Check overall system functionality.
+        - Acceptance Testing: Validate the software against the requirements.
+    - `Output`: Tested and defect-free product.
+
+    ---
+
+    5. `Deployment`
+    - `Objective`: Deliver the software to the customer for use.
+    - `Activities`:
+        - Deploy the product to the production environment.
+        - Provide training and documentation for users.
+    - `Output`: Fully deployed system.
+
+    ---
+
+    6. `Maintenance`
+    - `Objective`: Address issues and improve functionality post-deployment.
+    - `Activities`:
+        - Bug fixing, updates, and enhancements.
+        - Performance optimization and support.
+    - `Output`: Updated and reliable software.
+
+5. What are the various access specifiers in c++?
+
+    private
+    public
+    protected

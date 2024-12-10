@@ -120,9 +120,6 @@ int main(){
   app2->turnOn(); 
   app2->turnOff(); 
 
-
-
-
   delete app1;
   delete app2;
 

@@ -1,0 +1,226 @@
+Linux OS basics and shell scripting	 [Day 12..16]
+    Introduction to Linux OS
+        Learning Outcomes:
+            1. Able to explain the evolution of Linux OS and various distributions of Linux OS.
+            2. Able to explain the file system in Linux and perform various file management operations
+            3. For a given requirement, able to write Shell script 
+        Topics:
+            History of Linux and different versions
+            Features of Linux
+            Architecture of Linux
+            Linux Shell
+            Basic Linux Commands 
+                cat
+                mkdir
+                rmdir
+                touch 
+                mv 
+                cp
+                ls
+                pwd
+                grep
+                rm
+                ln
+                ssh
+                scp
+                ps, top, free, 
+            File Permission in Linux
+                User
+                Group
+                Other Users
+                Types of files
+                read, write and execute permissions for files, directories and special files
+                Managing permissions (chown, chmod)
+            Working with basic vi/vim editor
+            Linux Shell scripting
+                Introduction to Bash Shell
+                Using Variables
+                Special Variables
+                Using Arrays
+                Basic Operators
+                Decision Making
+                Shell Loops
+                Loop Control
+                Quoting Mechanisms
+                IO Redirections
+                Shell Functions
+                Handling options
+            Linux environment variables and advanced commands
+                PATH
+                LD_LIBRARY_PATH
+                ldconfig
+                file
+                ldd
+                strings
+                ulimit
+
+C++ Programming
+    Introduction to OOPS using C++  [Day 17, 18]
+        Learning Outcomes:
+            Able to define Object Oriented Programming, Classes and Objects
+            Given a problem statement, identify the classes, data members and functions and write appropriate C++ code to create the class
+            Create objects from classes and use them by calling the appropriate functions
+            Explain Abstraction and Encapsulation with a proper example
+            Identify the need of function overloading and code them
+            Explain Polymorphism with the example of function overloading
+            Identify the need of default and parameterized constructors and code them
+            Identify the need of static data members and functions and code them
+            Identify the need of const data members and code them
+            Identify the need of friend functions and friend classes and write code
+            Identify the need of an array as the data member of a class and write code
+            Identify the need of an array of objects and write code
+            Identify the need of a pointer as the data member of a class and write code
+            Identify the need of an object as the data member of a class (aggregation, “has-a”) and write code
+            Identify the need of creating objects dynamically and write code
+        Topics:
+            Maintainable Programs
+            Structured Programming – Advantages and Disadvantages
+            Object Oriented Programming
+            What is OOPS?
+            Classes and Objects
+            Advantages of OOPS – Introduction to Abstraction, Encapsulation, Polymorphism and Inheritance
+            OOPS Designs with real-time examples.
+            Creating classes with data members and functions in C++
+            Creating objects in C++
+            Access specifiers – private and public
+            Function Overloading
+            Initializing an object using Constructor
+            Default and parameterized constructors
+            The copy constructor
+            Destructors
+            Static data members and static functions
+            The const data members
+            The friend functions
+            The friend classes
+            Array as data member of a class
+            Array of objects
+            Pointer as the data member of a class
+            Pointer to an object
+            The “this” pointer
+            An object as the data member of a class
+            Aggregation and “has-a” relationship
+            Dynamic memory allocation
+            Creating and destroying objects dynamically
+    Inheritance     [Day 19]
+        Learning Outcomes:
+            Given a problem statement, identify the need of inheritance by finding classes with “is a” relationship
+            Able to inherit a class and create a sub class
+            Able to identify the need of the protected access specifier and use it appropriately
+            Able to identify the need to call the base class functions from the sub class functions and write code
+            Able to identify the need to call the base class constructors from the sub class constructors and write code
+            Able to identify the need of function overriding and write code
+            Able to explain polymorphism with function overriding as an example
+            Able to explain the difference between static binding/polymorphism and dynamic (runtime) binding/polymorphism with function overloading and function overriding as examples
+            Able to identify the need of dynamic binding and write code
+            Able to identify the need of multilevel inheritance and code them
+            Able to identify the need of multiple inheritance and code them
+        Topics:
+            Inheritance and its advantages
+            The protected access
+            Calling super class methods
+            Constructors in inheritance
+            Method Overriding
+            Pointer to a base class
+            Virtual functions
+            Dynamic/Runtime Binding and Polymorphism
+            Casting a class
+            Single Inheritance
+            Multilevel Inheritance
+            Multiple Inheritance
+            Hierarchical Inheritance
+            Hybrid Inheritance
+            Difference between “is-a” and “has-a” relationship
+    Polymorphism    [Day 21]
+        Learning Outcomes:
+            Explain polymorphism with the example of method overloading
+            Identify the need of static data and methods and code them
+            Identify the need of final data members, 
+                final methods and final parameters and code them
+            Identify the need of arrays as properties of a class and code them
+            Explain polymorphism with the example of method overriding
+            Explain early binding (compile time polymorphism) and 
+                late/dynamic binding (runtime polymorphism) 
+                with method overloading and method overriding
+            Identify the need of interfaces and write code
+            Explain how runtime polymorphism is achieved 
+                with the help of abstract classes and interfaces
+            Identify the need for multiple inheritance of interfaces and write code
+        Topics:
+            Polymorphism and its advantages
+            Types of Polymorphism
+            Types of Binding
+            Method Overloading and its uses.
+            Conditions of Overloading
+            Method Overriding
+            Scenario of Overriding
+            Difference between Overloading and Overriding
+
+    Operator Overloading    [Day 22]
+        Learning Outcomes:
+            Able to explain the need for Operator Overloading and 
+            write code for Operator Overloading as  Member Functions and Non-member Functions
+            Able to perform Operator Overloading the Stream Insertion Operator
+        Topics:
+            Introduction to Operator overloading
+            Overloading the Assignment Operator 
+            Overloading the Assignment Operator 
+            Overloading Operators as Member Functions
+            Overloading Operators as Global Functions
+            Overloading the Stream Insertion and Extraction Operators
+
+    Abstract Class          [Day 23]
+        Learning Outcomes:
+            Able to define a pure virtual function and an abstract class
+            Able to explain the uses of abstract classes
+            Identify the need of pure virtual functions and code them
+            Able to explain how runtime polymorphism is achieved 
+                with the help of abstract classes
+        Topics:
+            Virtual Functions
+            Pure Virtual functions
+            Abstract Class
+    Exception Handling      [Day 24]
+        Learning Outcomes:
+            Identify the probable exceptions and write necessary code 
+                to handle them to avoid the program from crashing
+            Identify the need of user defined exceptions, 
+                create them and throw them
+        Topics:
+            Exceptions
+            Handling exceptions using “try-catch”
+            Multiple catch blocks
+            The catch block to catch all exceptions
+            Custom Exception
+            Throwing an exception
+
+Compiling C Code Within C++ [Day 24]
+    Learning Outcomes:
+        Understand the difference between C and C++.
+        Be able to compile C code within C++.
+        Understand the use of the extern "C" keyword.
+        Understand the role of the C++ preprocessor.
+        Understand the role of the C++ linker.
+    Topics:
+        What is the difference between C and C++?
+        How to compile C code within C++?
+        The extern "C" keyword
+        The C++ preprocessor
+        The C++ linker
+
+
+
+
+
+
+
+
+
+
+
+
+Doubts:
+
+1. In polymorphism, consider multilevel inheritance, and there are 3 classes with 3 functions with same name, 
+    and each class has an object assiciated with it. Which function will be called for each object.
+
+

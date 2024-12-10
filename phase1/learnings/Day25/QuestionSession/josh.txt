@@ -1,0 +1,23 @@
+Answerer:   Questioner
+
+Nayana->    Bhagya
+            Observer: Pitchumani
+
+Bhagya->   Pitchumani
+            Observer:   Josh          
+
+Pitchumani->    Josh
+            Observer: Dhaheen
+
+Josh->      Dhaheen
+            Observer: Nayana
+
+Dhaheen->  Nayana
+            Observer: Bhagya
+
+
+1. What is virtual function?
+2. Why we use inheritance?
+3. Swap two numbers without temp ?
+4. Basic OOP concepts.
+5. What is Constructor?
