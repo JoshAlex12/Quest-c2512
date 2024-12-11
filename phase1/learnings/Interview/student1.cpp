@@ -31,11 +31,11 @@ class Rectangle : public Shape {
         Rectangle(int p_length, int p_breadth){
             length = p_length;
             breadth = p_breadth;
-            cout << "Constructor Rectangle" << endl;
+            cout << "Constructor Rectangle 1" << endl;
         }
 
         Rectangle(){
-            cout << "Constructor Rectangle" << endl;
+            cout << "Constructor Rectangle 2" << endl;
             cout << "Enter length: "; cin >> length;
             cout << "Enter breadth: "; cin >> breadth;
         }
@@ -52,7 +52,17 @@ class Entho : public Rectangle{
             return length * breadth;
         }
 
-        Entho(){cout << "Constructor Entho" << endl;};
+        Entho(int p_length, int p_breadth){
+            length = p_length;
+            breadth = p_breadth;
+            cout << "Constructor Entho 1" << endl;
+        }
+
+        Entho(){
+            cout << "Constructor Entho 2" << endl;
+            // cout << "Enter length: "; cin >> length;
+            // cout << "Enter breadth: "; cin >> breadth;
+        }
         ~Entho(){cout << "Destructor Entho" << endl;};
 };
 
@@ -63,7 +73,7 @@ int main(){
     // delete shape1;
 
     cout << "Using parent pointer to derived class: Shape* shape1 = new Entho(5.0, 3.0)" << endl;
-    Shape* shape1 = new Entho(5.0, 3.0);
+    Shape* shape1 = new Entho();
     cout << "Area of Rectangle: " << shape1->area() << endl;
     delete shape1;
 

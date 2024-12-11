@@ -1,0 +1,85 @@
+Answerer:   Questioner
+
+Nayana->    Josh
+            Observer: Dhaheen
+
+Pitchumani->   Dhaheen
+            Observer: Bhagya
+
+Dhaheen-> Bhagya
+            Observer: Pitchumani
+
+Josh->      Pitchumani
+            Observer: Nayana
+
+Bhagya->    Nayana
+            Observer: Josh
+
+
+
+
+1. What are Macro Arguments in C++ pre-processors?
+    - C++ preprocessor macros can take arguments, 
+    allowing for more flexible macro definitions.
+
+    Example:
+    cpp
+    #define MAX(a, b) ((a) > (b) ? (a) : (b))
+    int larger = MAX(3, 5);  // Expands to: ((3) > (5) ? (3) : (5))
+
+2. How to create the Static Library using ar command?
+
+    The `ar` command to bundle the object file into a static library (`.a` file):
+    bash
+    ar rcs libmathutils.a math_utils.o
+    ```
+
+    Here:
+    - `ar`: Archiver utility to create static libraries.
+    - `rcs`: 
+    - r: Replace or insert files into the archive.
+    - c: Create the archive if it doesn’t exist.
+    - s: Add an index for faster lookups.
+
+    The resulting libmathutils.a is your static library.
+
+3. Summarize Exception Handling Concepts in C++
+
+    - `try-catch`: Used to handle exceptions. 
+    Code that may throw an exception is enclosed in the try block, and 
+    any exceptions are caught and handled in the catch block.
+    - `Multiple catch blocks`: You can have more than one catch block 
+    to handle different types of exceptions separately.
+    - `Generic catch block`: A catch block 
+    that catches all types of exceptions using the ... syntax.
+    - Custom Exceptions: You can define custom exceptions 
+    by inheriting from the std::exception class (or any derived class)
+    to handle specific errors in your application.
+    - Throwing exceptions: The throw keyword is used 
+    to explicitly throw an exception when an error condition is met.
+
+4. What are the Phases of the Waterfall Model?
+
+    1. Requirement Analysis
+    - Objective: Collect and document all the software requirements.
+
+    2. System Design
+    - Objective: Develop the architecture and design of the system.
+
+    3. Implementation (Coding)
+    - Objective: Translate the design into actual code.
+
+    4. Testing
+    - Objective: Identify and fix defects in the system.
+
+    5. Deployment
+    - Objective: Deliver the software to the customer for use.
+
+    6. Maintenance
+    - Objective: Address issues and improve functionality post-deployment.
+
+5. What are the various access specifiers in c++?
+
+    private
+    public
+    protected
