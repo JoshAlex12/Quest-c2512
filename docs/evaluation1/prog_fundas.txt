@@ -38,7 +38,6 @@ Questions:
     29. implement different functions with array
     30. implement different functions without array
 
-
 1. to find average of two numbers.  [Sana] 
 
     //pseudocode
