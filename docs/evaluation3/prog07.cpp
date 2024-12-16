@@ -12,11 +12,9 @@
 
 using namespace std;
 
-// Data Storage
 deque<string> patientIDs;
 deque<int> ages;
 
-// Function Prototypes
 void printMenu();
 void createPatient();
 void displayAllPatients();
