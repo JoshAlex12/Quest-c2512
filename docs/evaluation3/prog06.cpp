@@ -20,7 +20,7 @@ vector<int> ages;
 void printMenu();
 void createPatient();
 void displayAllPatients();
-int findIndexById(const string& patientID);
+int findIndexById(const string &patientID);
 void editPatientById();
 void deletePatientById();
 void findMinAge();
@@ -57,7 +57,8 @@ int main()
 			{
 				cout << "No patients available.\n";
 			}
-			else {
+			else
+			{
 				findMinAge();
 			}
 			break;
@@ -65,9 +66,9 @@ int main()
 			if (ages.empty())
 			{
 				cout << "No patients available.\n";
-
 			}
-			else {
+			else
+			{
 				findMaxAge();
 			}
 			break;
@@ -75,9 +76,9 @@ int main()
 			if (ages.size() < 2)
 			{
 				cout << "Not enough patients for this operation.\n";
-
 			}
-			else {
+			else
+			{
 				findSecondMinAge();
 			}
 			break;
@@ -85,9 +86,9 @@ int main()
 			if (ages.size() < 2)
 			{
 				cout << "Not enough patients for this operation.\n";
-
 			}
-			else {
+			else
+			{
 				findSecondMaxAge();
 			}
 			break;
@@ -157,7 +158,7 @@ void displayAllPatients()
 	cout << "---------------------------------\n";
 }
 
-int findIndexById(const string& patientID)
+int findIndexById(const string &patientID)
 {
 	auto iter = find(patientIDs.begin(), patientIDs.end(), patientID);
 	if (iter != patientIDs.end())
@@ -208,8 +209,6 @@ void deletePatientById()
 
 void findMinAge()
 {
-
-
 	auto minIt = min_element(ages.begin(), ages.end());
 	int index = distance(ages.begin(), minIt);
 	cout << "Patient with Min Age: " << patientIDs[index] << " with Age " << *minIt << "\n";
@@ -217,8 +216,6 @@ void findMinAge()
 
 void findMaxAge()
 {
-
-
 	auto maxIt = max_element(ages.begin(), ages.end());
 	int index = distance(ages.begin(), maxIt);
 	cout << "Patient with Max Age: " << patientIDs[index] << " with Age " << *maxIt << "\n";
@@ -226,8 +223,6 @@ void findMaxAge()
 
 void findSecondMinAge()
 {
-
-
 	vector<int> sortedAges = ages;
 	sort(sortedAges.begin(), sortedAges.end());
 	int secondMinAge = sortedAges[1];
@@ -239,8 +234,6 @@ void findSecondMinAge()
 
 void findSecondMaxAge()
 {
-
-
 	vector<int> sortedAges = ages;
 	sort(sortedAges.rbegin(), sortedAges.rend());
 	int secondMaxAge = sortedAges[1];

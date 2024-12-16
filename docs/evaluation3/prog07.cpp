@@ -4,7 +4,6 @@
 //         to vector<HospitalStay> stays.
 //     2.2 vector -> deque
 
-
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -21,7 +20,7 @@ deque<int> ages;
 void printMenu();
 void createPatient();
 void displayAllPatients();
-int findIndexById(const string& patientID);
+int findIndexById(const string &patientID);
 void editPatientById();
 void deletePatientById();
 void findMinAge();
@@ -58,7 +57,8 @@ int main()
 			{
 				cout << "No patients available.\n";
 			}
-			else {
+			else
+			{
 				findMinAge();
 			}
 			break;
@@ -67,7 +67,8 @@ int main()
 			{
 				cout << "No patients available.\n";
 			}
-			else {
+			else
+			{
 				findMaxAge();
 			}
 			break;
@@ -76,7 +77,8 @@ int main()
 			{
 				cout << "Not enough patients for this operation.\n";
 			}
-			else {
+			else
+			{
 				findSecondMinAge();
 			}
 
@@ -86,7 +88,8 @@ int main()
 			{
 				cout << "Not enough patients for this operation.\n";
 			}
-			else {
+			else
+			{
 				findSecondMaxAge();
 			}
 			break;
@@ -156,7 +159,7 @@ void displayAllPatients()
 	cout << "---------------------------------\n";
 }
 
-int findIndexById(const string& patientID)
+int findIndexById(const string &patientID)
 {
 	auto it = find(patientIDs.begin(), patientIDs.end(), patientID);
 	if (it != patientIDs.end())
@@ -214,8 +217,6 @@ void findMinAge()
 
 void findMaxAge()
 {
-
-
 	auto maxIt = max_element(ages.begin(), ages.end());
 	int index = distance(ages.begin(), maxIt);
 	cout << "Patient with Max Age: " << patientIDs[index] << " with Age " << *maxIt << "\n";
@@ -223,8 +224,6 @@ void findMaxAge()
 
 void findSecondMinAge()
 {
-
-
 	deque<int> sortedAges = ages;
 	sort(sortedAges.begin(), sortedAges.end());
 	int secondMinAge = sortedAges[1];
@@ -236,8 +235,6 @@ void findSecondMinAge()
 
 void findSecondMaxAge()
 {
-
-
 	deque<int> sortedAges = ages;
 	sort(sortedAges.rbegin(), sortedAges.rend());
 	int secondMaxAge = sortedAges[1];
