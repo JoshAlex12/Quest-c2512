@@ -183,9 +183,15 @@ int main()
     string tasks2[] = {"Design", "Implement"};
     Employee *p2 = new Programmer(102, 23, "Bhagya", tasks2, 2);
 
+    // Programmer *e1 = p1;
+    // Programmer *e2 = p2;
+
+    Programmer *e1 = dynamic_cast<Programmer *>(p1);
+    Programmer *e2 = dynamic_cast<Programmer *>(p2);
+
     cout << "Before Swap:" << endl;
-    cout << *p1 << endl;
-    cout << *p2 << endl;
+    cout << *e1 << endl;
+    cout << *e2 << endl;
 
     try
     {
@@ -197,8 +203,15 @@ int main()
     }
 
     cout << "\nAfter Swap:" << endl;
-    cout << *p1 << endl;
-    cout << *p2 << endl;
+
+    // Programmer *e1 = dynamic_cast<Programmer *>(p1);
+    // Programmer *e2 = dynamic_cast<Programmer *>(p2);
+
+    // cout << *p1 << endl;
+    // cout << *p2 << endl;
+
+    cout << *e1 << endl;
+    cout << *e2 << endl;
 
     delete p1;
     delete p2;
