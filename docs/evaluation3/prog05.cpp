@@ -19,6 +19,7 @@
     //1.5 construct array of N programmers. read programmers from keyboard.
         cin >> var; // overload operator>> in employee and programmer
 */
+
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -33,67 +34,91 @@ private:
     char *name;
 
 public:
-    Employee(int id, int age, const char *name);
-    Employee(Employee &&other);
-    Employee &operator=(Employee &&other);
-    virtual ~Employee();
-    virtual void swp(Employee &other);
-    friend ostream &operator<<(ostream &out, const Employee &employee);
-};
-
-Employee::Employee(int id, int age, const char *name)
-{
-    this->id = new int{id};
-    this->age = new int{age};
-    this->name = new char[strlen(name) + 1];
-    strcpy(this->name, name);
-}
-
-Employee::Employee(Employee &&other)
-{
-    this->id = other.id;
-    this->age = other.age;
-    this->name = other.name;
-    other.id = nullptr;
-    other.age = nullptr;
-    other.name = nullptr;
-}
-
-Employee &Employee::operator=(Employee &&other)
-{
-    if (this != &other)
+    Employee(int id = 0, int age = 0, const char *name = "")
     {
-        delete this->id;
-        delete this->age;
-        delete[] this->name;
-        this->id = other.id;
-        this->age = other.age;
-        this->name = other.name;
+        this->id = new int(id);
+        this->age = new int(age);
+        this->name = new char[strlen(name) + 1];
+        strcpy(this->name, name);
+    }
+
+    Employee(Employee &&other) noexcept
+    {
+        id = other.id;
+        age = other.age;
+        name = other.name;
+
         other.id = nullptr;
         other.age = nullptr;
         other.name = nullptr;
     }
-    return *this;
-}
 
-Employee::~Employee()
-{
-    delete this->id;
-    delete this->age;
-    delete[] this->name;
-}
+    Employee &operator=(Employee &&other) noexcept
+    {
+        if (this != &other)
+        {
+            delete id;
+            delete age;
+            delete[] name;
 
-void Employee::swp(Employee &other)
-{
-    Employee temp(move(*this));
-    *this = move(other);
-    other = move(temp);
-}
+            id = other.id;
+            age = other.age;
+            name = other.name;
 
-ostream &operator<<(ostream &out, const Employee &employee)
+            other.id = nullptr;
+            other.age = nullptr;
+            other.name = nullptr;
+        }
+        return *this;
+    }
+
+    virtual ~Employee()
+    {
+        delete id;
+        delete age;
+        delete[] name;
+    }
+
+    virtual void swp(Employee &other)
+    {
+        Employee temp(move(*this));
+        *this = move(other);
+        other = move(temp);
+    }
+
+    friend ostream &operator<<(ostream &out, const Employee &employee)
+    {
+        out << "ID: " << *(employee.id) << ", Name: " << employee.name << ", Age: " << *(employee.age);
+        return out;
+    }
+
+    friend istream &operator>>(istream &in, Employee &employee);
+};
+
+istream &operator>>(istream &in, Employee &employee)
 {
-    out << "ID: " << *(employee.id) << ", Name: " << employee.name << ", Age: " << *(employee.age);
-    return out;
+    int tempId, tempAge;
+    string tempName;
+
+    cout << "Enter ID: ";
+    in >> tempId;
+
+    cout << "Enter Age: ";
+    in >> tempAge;
+
+    cout << "Enter Name: ";
+    in >> tempName;
+
+    delete employee.id;
+    delete employee.age;
+    delete[] employee.name;
+
+    employee.id = new int(tempId);
+    employee.age = new int(tempAge);
+    employee.name = new char[tempName.length() + 1];
+    strcpy(employee.name, tempName.c_str());
+
+    return in;
 }
 
 class Programmer : public Employee
@@ -103,44 +128,45 @@ private:
     int *taskCount;
 
 public:
-    Programmer(int v_id, int v_age, const char *v_name, string *v_tasks, int v_taskCount)
-        : Employee(v_id, v_age, v_name)
+    Programmer(int id = 0, int age = 0, const char *name = "", string *v_tasks = nullptr, int v_taskCount = 0)
+        : Employee(id, age, name)
     {
-        this->taskCount = new int{v_taskCount};
-        this->tasks = new string[v_taskCount];
+        taskCount = new int(v_taskCount);
+        tasks = new string[v_taskCount];
         for (int i = 0; i < v_taskCount; i++)
         {
-            this->tasks[i] = v_tasks[i];
+            tasks[i] = v_tasks[i];
         }
     }
 
-    Programmer(Programmer &&other) : Employee(move(other))
+    Programmer(Programmer &&other) noexcept
+        : Employee(move(other)), tasks(other.tasks), taskCount(other.taskCount)
     {
-        this->taskCount = other.taskCount;
-        this->tasks = other.tasks;
-        other.taskCount = nullptr;
         other.tasks = nullptr;
+        other.taskCount = nullptr;
     }
 
-    Programmer &operator=(Programmer &&other)
+    Programmer &operator=(Programmer &&other) noexcept
     {
         if (this != &other)
         {
             Employee::operator=(move(other));
-            delete this->taskCount;
-            delete[] this->tasks;
-            this->taskCount = other.taskCount;
-            this->tasks = other.tasks;
-            other.taskCount = nullptr;
+            delete[] tasks;
+            delete taskCount;
+
+            tasks = other.tasks;
+            taskCount = other.taskCount;
+
             other.tasks = nullptr;
+            other.taskCount = nullptr;
         }
         return *this;
     }
 
     ~Programmer()
     {
-        delete taskCount;
         delete[] tasks;
+        delete taskCount;
     }
 
     void swp(Employee &other) override
@@ -157,21 +183,47 @@ public:
         }
     }
 
-    friend ostream &operator<<(ostream &out, const Programmer &programmer);
+    friend ostream &operator<<(ostream &out, const Programmer &programmer)
+    {
+        out << static_cast<const Employee &>(programmer);
+        out << ", Task Count: " << *(programmer.taskCount) << ", Tasks: [";
+        for (int i = 0; i < *(programmer.taskCount); i++)
+        {
+            out << programmer.tasks[i];
+            if (i < *(programmer.taskCount) - 1)
+                out << ", ";
+        }
+        out << "]";
+        return out;
+    }
+
+    friend istream &operator>>(istream &in, Programmer &programmer);
 };
 
-ostream &operator<<(ostream &out, const Programmer &programmer)
+istream &operator>>(istream &in, Programmer &programmer)
 {
-    out << static_cast<const Employee &>(programmer);
-    out << ", Task Count: " << *(programmer.taskCount) << ", Tasks: [";
-    for (int i = 0; i < *(programmer.taskCount); i++)
+    in >> static_cast<Employee &>(programmer);
+
+    int tempTaskCount;
+    cout << "Enter Task Count: ";
+    in >> tempTaskCount;
+
+    string *tempTasks = new string[tempTaskCount];
+    cout << "Enter Tasks:\n";
+
+    for (int i = 0; i < tempTaskCount; ++i)
     {
-        out << programmer.tasks[i];
-        if (i < *(programmer.taskCount) - 1)
-            out << ", ";
+        cout << "Task " << (i + 1) << ": ";
+        getline(in, tempTasks[i]);
     }
-    out << "]";
-    return out;
+
+    delete[] programmer.tasks;
+    delete programmer.taskCount;
+
+    programmer.taskCount = new int(tempTaskCount);
+    programmer.tasks = tempTasks;
+
+    return in;
 }
 
 int main()
@@ -188,39 +240,45 @@ int main()
         string name;
 
         cout << "\nEnter details for Programmer " << (i + 1) << ":\n";
-        cout << "ID: ";
+
+        cout << "Enter ID: ";
         cin >> id;
-        cout << "Age: ";
+
+        cout << "Enter Age: ";
         cin >> age;
-        cout << "Name: ";
-        cin.ignore();
-        getline(cin, name);
-        cout << "Number of tasks: ";
+
+        cout << "Enter Name: ";
+        cin >> name;
+
+        cout << "Enter Task Count: ";
         cin >> taskCount;
 
         string *tasks = new string[taskCount];
-        cout << "Enter the tasks:\n";
-        cin.ignore();
+        cout << "Enter Tasks:\n";
+
         for (int j = 0; j < taskCount; ++j)
         {
             cout << "Task " << (j + 1) << ": ";
-            getline(cin, tasks[j]);
+            cin >> tasks[j];
         }
 
         programmers[i] = new Programmer(id, age, name.c_str(), tasks, taskCount);
+
         delete[] tasks;
     }
 
-    cout << "\nDetails of all programmers:\n";
+    cout << "\nProgrammer Details:\n";
     for (int i = 0; i < N; ++i)
     {
-        cout << *programmers[i] << endl;
+        cout << "Programmer " << (i + 1) << ":\n"
+             << *programmers[i] << endl;
     }
 
-    for (int i = 0; i < N; ++i)
-    {
-        delete programmers[i];
-    }
+    // Free allocated memory
+    // for (int i = 0; i < N; ++i)
+    // {
+    //     delete programmers[i];
+    // }
     delete[] programmers;
 
     return 0;

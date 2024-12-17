@@ -160,9 +160,16 @@ int main()
     string tasks2[] = {"Design", "Implement"};
     unique_ptr<Employee> p2 = make_unique<Programmer>(102, 23, "Bhagya", tasks2, 2);
 
+    // cout << "Before Swap:" << endl;
+    // cout << *p1 << endl;
+    // cout << *p2 << endl;
+
+    Programmer *e1 = dynamic_cast<Programmer *>(p1.get());
+    Programmer *e2 = dynamic_cast<Programmer *>(p2.get());
+
     cout << "Before Swap:" << endl;
-    cout << *p1 << endl;
-    cout << *p2 << endl;
+    cout << *e1 << endl;
+    cout << *e2 << endl;
 
     try
     {
@@ -174,8 +181,10 @@ int main()
     }
 
     cout << "\nAfter Swap:" << endl;
-    cout << *p1 << endl;
-    cout << *p2 << endl;
+    // cout << *p1 << endl;
+    // cout << *p2 << endl;
+    cout << *e1 << endl;
+    cout << *e2 << endl;
 
     return 0;
 }

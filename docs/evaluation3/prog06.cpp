@@ -12,21 +12,15 @@
 
 using namespace std;
 
-// Data Storage
 vector<string> patientIDs;
 vector<int> ages;
 
-// Function Prototypes
 void printMenu();
 void createPatient();
 void displayAllPatients();
 int findIndexById(const string &patientID);
 void editPatientById();
 void deletePatientById();
-void findMinAge();
-void findMaxAge();
-void findSecondMinAge();
-void findSecondMaxAge();
 
 int main()
 {
@@ -53,52 +47,12 @@ int main()
 			deletePatientById();
 			break;
 		case 5:
-			if (ages.empty())
-			{
-				cout << "No patients available.\n";
-			}
-			else
-			{
-				findMinAge();
-			}
-			break;
-		case 6:
-			if (ages.empty())
-			{
-				cout << "No patients available.\n";
-			}
-			else
-			{
-				findMaxAge();
-			}
-			break;
-		case 7:
-			if (ages.size() < 2)
-			{
-				cout << "Not enough patients for this operation.\n";
-			}
-			else
-			{
-				findSecondMinAge();
-			}
-			break;
-		case 8:
-			if (ages.size() < 2)
-			{
-				cout << "Not enough patients for this operation.\n";
-			}
-			else
-			{
-				findSecondMaxAge();
-			}
-			break;
-		case 9:
 			cout << "Exiting the system. Goodbye!\n";
 			break;
 		default:
 			cout << "Invalid choice. Please enter a number between 1 and 9.\n";
 		}
-	} while (choice != 9);
+	} while (choice != 5);
 
 	return 0;
 }
@@ -110,11 +64,7 @@ void printMenu()
 	cout << "2. Display All Patients\n";
 	cout << "3. Edit Patient\n";
 	cout << "4. Delete Patient\n";
-	cout << "5. Find Min Age\n";
-	cout << "6. Find Max Age\n";
-	cout << "7. Find Second Min Age\n";
-	cout << "8. Find Second Max Age\n";
-	cout << "9. Exit\n";
+	cout << "5. Exit\n";
 }
 
 void createPatient()
@@ -153,7 +103,7 @@ void displayAllPatients()
 	cout << "---------------------------------\n";
 	for (size_t i = 0; i < patientIDs.size(); ++i)
 	{
-		cout << "| " << patientIDs[i] << " \t| " << ages[i] << " \t|\n";
+		cout << "| " << patientIDs[i] << " \t\t| " << ages[i] << " \t|\n";
 	}
 	cout << "---------------------------------\n";
 }
@@ -205,40 +155,4 @@ void deletePatientById()
 	ages.erase(ages.begin() + index);
 
 	cout << "Patient deleted successfully.\n";
-}
-
-void findMinAge()
-{
-	auto minIt = min_element(ages.begin(), ages.end());
-	int index = distance(ages.begin(), minIt);
-	cout << "Patient with Min Age: " << patientIDs[index] << " with Age " << *minIt << "\n";
-}
-
-void findMaxAge()
-{
-	auto maxIt = max_element(ages.begin(), ages.end());
-	int index = distance(ages.begin(), maxIt);
-	cout << "Patient with Max Age: " << patientIDs[index] << " with Age " << *maxIt << "\n";
-}
-
-void findSecondMinAge()
-{
-	vector<int> sortedAges = ages;
-	sort(sortedAges.begin(), sortedAges.end());
-	int secondMinAge = sortedAges[1];
-
-	auto iter = find(ages.begin(), ages.end(), secondMinAge);
-	int index = distance(ages.begin(), iter);
-	cout << "Patient with 2nd Min Age: " << patientIDs[index] << " with Age " << secondMinAge << "\n";
-}
-
-void findSecondMaxAge()
-{
-	vector<int> sortedAges = ages;
-	sort(sortedAges.rbegin(), sortedAges.rend());
-	int secondMaxAge = sortedAges[1];
-
-	auto iter = find(ages.begin(), ages.end(), secondMaxAge);
-	int index = distance(ages.begin(), iter);
-	cout << "Patient with 2nd Max Age: " << patientIDs[index] << " with Age " << secondMaxAge << "\n";
 }
