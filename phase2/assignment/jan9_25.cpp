@@ -1,3 +1,5 @@
+// calculate square | client server
+
 #include <iostream>
 
 #include <unistd.h>
